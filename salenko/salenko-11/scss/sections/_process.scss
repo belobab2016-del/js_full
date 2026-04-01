@@ -32,8 +32,6 @@
       background: rgba(0, 0, 0, 0.4);
     }
   }
-
-  // ВИПРАВЛЕНО: кнопка була перекрита overlay — додано z-index та позиціонування
   .play-btn {
     position: absolute;
     top: 50%;
