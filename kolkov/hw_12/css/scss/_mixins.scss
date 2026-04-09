@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+@mixin title-section {
+    margin-top: 7rem;
+    text-align: center;
+    color: $black-color;
+}
+
+@mixin media-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

@@ -1,0 +1,46 @@
+@supports (anchor-name: --main) {
+	#thoughts {
+		anchor-name: --main;
+	}
+	#thoughts article {
+		counter-reset: asidenotes;
+	}
+	#thoughts article sup {
+		font-size: 89%;
+		line-height: 0.5;
+		color: inherit;
+		text-decoration: none;
+	}
+	#thoughts article aside-note::after,
+	#thoughts article aside-note + sup::before {
+		content: counter(asidenotes);
+	}
+	#thoughts article aside-note {
+		counter-increment: asidenotes;
+		position: absolute;
+		anchor-name: --asidenote;
+		top: max(anchor(top), calc(anchor(--asidenote bottom, 0px) + 0.67em));
+		bottom: auto;
+		left: calc(anchor(--main right) + 4em);
+		max-width: 23em;
+		margin-block: 0.15em 0;
+		text-wrap: balance;
+		text-indent: 0;
+		font-size: 89%;
+		line-height: 1.25;
+		list-style: none;
+	}
+	#thoughts article aside-note::before {
+		content: counter(asidenotes);
+		position: absolute;
+		top: -0.4em;
+		right: calc(100% + 0.25em);
+	}
+	#thoughts article aside-note::first-letter {
+		text-transform: uppercase;
+	}
+	.img {
+		max-width: 100%;
+		height: auto;
+	}
+}

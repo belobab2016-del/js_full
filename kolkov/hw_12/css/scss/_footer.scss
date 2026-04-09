@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.footer {
+    background-color: $blue-color;
+    color: $white-color;
+    
+    &__title {
+        font-size: 1.3125rem;
+        font-weight: $font-weight-500;
+        margin: $margin-50px auto 1.25rem;
+    }
+
+    &__text {
+        font-size: 0.8125rem;
+        margin-bottom: $margin-50px;
+    }
+}

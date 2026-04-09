@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;   
+
+.first-screen {
+    background-color: $too-light-grey-color;
+    min-height: 100vh;
+
+    &__title {
+        font-weight: $font-weight-500;
+        font-size: 3rem;
+        margin-bottom: 3.75rem;
+        color: $black-color;
+        width: 33.75rem;
+    }
+
+    &__text {
+        margin-bottom: 4.0625rem;
+        width: 33.75rem;
+    }
+
+    &__btn {
+        background-color: $blue-color;
+        color: $white-color;
+        padding: 1.5625rem 2.5625rem 1rem;
+        margin-bottom: 8.8125rem;
+    }
+}
+
+@include media-max($mobile-small) {
+  
+  .first-screen {
+
+    &__title {
+      font-size: 2.5rem;
+      width: 28rem;
+    }
+    
+    &__text {
+      width: 28rem;
+    }
+  }
+}
+
+@include media-max($chine-phone) {
+    .first-screen {
+        &__title {
+            width: 80%;
+        }
+    }
+}

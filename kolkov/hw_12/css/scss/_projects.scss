@@ -1,0 +1,41 @@
+@use 'variables' as *;
+@use 'mixins' as *;   
+
+.projects {
+    background-color: $blue-color;
+    color: $white-color;
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        margin: $margin-100px auto;
+    }
+
+    &__block {
+        display: flex;
+        gap: 1.25rem;
+    }
+
+    &__text-1 {
+        display: block;
+        margin-bottom: 0.625rem;
+    }
+
+    &__text-2 {
+        display: block;
+    }
+}
+
+@include media-max($tablet) {
+    .projects {
+        &__wrap {
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        &__block {
+            margin-top: 2rem;
+        }
+    }
+}

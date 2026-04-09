@@ -1,0 +1,42 @@
+@use 'variables' as *;
+@use 'mixins' as *;   
+
+.about-me {
+    &__title {
+        @include title-section;
+    }
+
+    &__text {
+        margin: $margin-50px auto $margin-100px;
+        max-width: 33.75rem;
+        text-align: center;
+    }
+}
+
+@include media-max($mobile-small) {
+  
+    .about-me {
+        &__title {
+        font-size: 2.5rem;
+        width: 28rem;
+        }
+
+        &__text {
+        width: 28rem;
+        }
+    } 
+}
+
+@include media-max (chine-phone) {
+    .about-me {
+        &__title {
+            width: 80%;
+        }
+
+        &__text {
+            width: 80%;
+        }
+    }
+}
+
+

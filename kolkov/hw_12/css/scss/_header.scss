@@ -1,0 +1,71 @@
+@use 'variables' as *;
+@use 'mixins' as *;   
+
+.header {
+    padding: 4.9375rem 0;
+    margin-bottom: 5.1875rem;
+    
+    &__menu-toggle {
+        display: none;
+    }
+    
+    &__menu {
+        display: flex;
+        gap: $margin-50px;
+        left: 0;
+    }
+
+    &__menu-item {
+        list-style: none;
+    }
+
+    &__menu-link {
+        padding: 1rem 1.25rem  ;
+        cursor: pointer;
+        transition: all ease-in-out 0.8s;
+        border-radius: 5px;
+    }
+
+    &__menu-link:hover {
+        color: $blue-color;
+        background-color: $blue-color;
+        border-radius: 60%;
+    }
+}
+
+
+@include media-max($tablet) {
+    .header {
+        &__menu-toggle:checked ~ .menu {
+            right: 0;
+            display: none;
+        }
+
+        &__burger-icon {
+            margin: 3rem;
+        }
+
+        &__burger-icon span {
+            display: none;
+            width: 2rem;
+            height: 0.3rem;
+            background-color: #000;
+            border-radius: 0.145rem;
+            margin: 0.2rem;
+        }
+
+        &__menu {
+            left: -20rem;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        &__menu-toggle:checked ~ .menu {
+            left: 0;
+        }
+
+        &__burger-icon span {
+            display: block;
+        }
+    }
+}
